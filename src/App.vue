@@ -1,13 +1,16 @@
 <template>
   <HeaderVue />
-  <HomeVue />
-  <AboutVue />
+ <router-view></router-view>
 </template>
 
-<script setup>
-import AboutVue from '../src/pages/AboutVue.vue'
-import HeaderVue from '../src/components/HeaderVue.vue'
-import HomeVue from '../src/pages/HomeVue.vue'
+<script>
+import HeaderVue from "@/components/HeaderVue.vue"
+
+export default{
+  components:{
+    HeaderVue
+  }
+}
+
 </script>
 
-<style></style>
