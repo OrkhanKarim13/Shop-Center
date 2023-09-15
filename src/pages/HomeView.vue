@@ -23,8 +23,7 @@
             </div>
             <div class="h-1/10 text-center">{{ post.title }}</div>
             <div class="h-8/10 text-center">{{ post.category }}</div>
-            <div class="h-1/10 text-center">{{ post.price }}</div>
-
+            <div class="h-1/10 text-center">{{ post.price }}$</div>
         </div>
        </div>
         <div class="max-w-6xl grid grid-cols gap-4 p-4">
