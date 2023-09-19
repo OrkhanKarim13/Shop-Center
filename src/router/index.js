@@ -4,6 +4,8 @@ import Home from "@/pages/HomeView.vue";
 import Services from "@/pages/ServicesView.vue";
 import Blog from "@/pages/BlogView.vue";
 import Contact from "@/pages/ContactView.vue";
+import SingleProduct from "@/pages/SingleProduct.vue"
+import ProductDetail from "@/pages/ProductDetail/_id.vue"
 
 let routes = [
   {
@@ -30,6 +32,16 @@ let routes = [
     path: "/contact",
     name: "Contact",
     component: Contact,
+  },
+  {
+    path: "/SingleProduct/:id",
+    name: "SingleProduct",
+    component: SingleProduct,
+  },
+  {
+    path: "/productDetail/:id",
+    name: "productDetail",
+    component: ProductDetail,
   },
 ];
 
