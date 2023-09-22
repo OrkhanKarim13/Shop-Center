@@ -4,7 +4,8 @@ import axios from "axios";
 export default createStore({
   state: {
     posts: [],
-    productDetail:null
+    productDetail:null,
+    isProductLoading:false,
   },
   mutations: {
     setPosts(state, posts) {
@@ -15,12 +16,19 @@ export default createStore({
     },
   },
   actions: {
-    async fetchPosts({commit}) {
+    async fetchPosts({commit,state}) {
+      state.isProductLoading=true
+
       try {
+
         const response = await axios.get(
           "https://fakestoreapi.com/products/"
         );
           commit('setPosts', response.data);
+          state.isProductLoading=false
+          console.log("stete bax",state.isProductLoading)
+
+
         console.log("response", response.data);
       } catch (error) {
         console.error("error:", error);

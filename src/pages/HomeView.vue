@@ -17,10 +17,11 @@
         </div>
         <main class="flex flex-col justify-center items-center  gap-4 p-4 m-4">
             <h1 class="">Products</h1>
-            <!-- <router-link :to=""> -->
-            <div class="grid grid-cols-4 gap-4 p-4 m-4 w-full">
+
+
+            {{ $store.state.isProductLoading }}
+            <div v-if="!$store.state.isProductLoading" class="grid grid-cols-4 gap-4 p-4 m-4 w-full">
                     <div class="w-full flex flex-col justify-between gap-4 border" v-for="post in getFakeData" :key="post.id">
-                        post.id{{ post.id }}
                    <router-link :to="`/singleProduct/${post.id}`" >
                     <div class="w-full flex justify-center">
                             <img class="p-4 object-contain w-[250px] h-[300px]" :src="post.image" alt="img">
@@ -31,7 +32,9 @@
                    </router-link>
                     </div>
                 </div>
-            <!-- </router-link> -->
+                <div v-else>
+                    loading...
+                </div>
             <div class="max-w-6xl grid grid-cols gap-4 p-4">
                 <div class="w-full rounded-xl border-2 border-gray-200 shadow-xl overflow-hidden">
 
